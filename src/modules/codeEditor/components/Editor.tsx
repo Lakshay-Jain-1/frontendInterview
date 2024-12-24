@@ -25,18 +25,11 @@ const CodeEditor:React.FC =()=>{
       alert(editorRef.current.getValue());
     }
    
-    const EditorStyle :React.CSSProperties ={
-     position:"absolute",
-     right:1,   
-     height:"65vh",
-     width:"50vw",
-     border:"2px solid black"
-    }
   
     return (
       <>
-        <button onClick={showValue}>Show value</button>
-        <div style={EditorStyle}>
+     
+        <div className="editor">
         <Editor
           //theme="vs-dark"
           height="90vh"

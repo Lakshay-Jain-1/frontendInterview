@@ -1,0 +1,58 @@
+#run {
+  position: fixed;
+  right: 48vw;
+  zindex: 2;
+  width: 70px;
+}
+
+.editor {
+  height: 65vh;
+  width: 50vw;
+  border: 2px solid black;
+  grid-area: editorPosition;
+}
+
+.question {
+  border-top: 2px solid black;
+  width: 50vw;
+  height: 45vh;
+  grid-area: questionPosition;
+}
+
+.testCase {
+  border-top: 2px solid black;
+  width: 50vw;
+  height: 45vh;
+  grid-area: testcasePosition;
+}
+
+.technicalRound {
+  display: grid;
+  grid-template-areas:
+    "questionPosition questionPosition "
+    "testcasePosition testcasePosition "
+    "editorPosition editorPosition ";
+  width: 100vw;
+}
+
+/* For mobile */
+@media only screen and (max-width: 1000px) {
+  .question,
+  .testCase,
+  .editor {
+    width: 100vw;
+  }
+}
+
+/* For laptop */
+@media only screen and (min-width: 1000px) {
+  .technicalRound {
+    grid-template-areas:
+      "questionPosition editorPosition"
+      "testcasePosition editorPosition"
+      "testcasePosition editorPosition";
+  }
+  .editor {
+    margin-top: 30px;
+  }
+}
