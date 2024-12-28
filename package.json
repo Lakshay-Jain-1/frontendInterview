@@ -22,6 +22,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.2.0",
+    "react-router": "^7.1.1",
     "styled-components": "^6.1.13",
     "terser": "^5.37.0",
     "text-formatter-js": "^0.0.1"

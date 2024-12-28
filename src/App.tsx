@@ -1,5 +1,3 @@
-import TechnicalRound from "./modules/codeEditor/pages/TechnicalRound";
-
 
 function App() {
   
@@ -7,7 +5,7 @@ function App() {
 
   return (
     <>
-     <TechnicalRound/>
+     
     </>
   );
 }
