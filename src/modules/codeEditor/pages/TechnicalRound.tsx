@@ -12,6 +12,9 @@ import Result from "../components/Result";
 
 const TechnicalRound: React.FC = () => {
   const testCaseOutputValue:boolean= useSelector((state:RootState)=>state.technical.testCaseOutput)
+    const success: boolean = useSelector(
+      (state: RootState) => state.technical.successful
+    );
   const dispatch = useDispatch()
     useEffect(()=>{
       questionGenerator()
@@ -31,7 +34,6 @@ const TechnicalRound: React.FC = () => {
       <TestCases />
       <CodeEditor />
       </div>
-      
       {testCaseOutputValue?<Result/>:""}
     </>
   );

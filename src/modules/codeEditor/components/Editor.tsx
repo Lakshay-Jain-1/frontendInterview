@@ -1,16 +1,46 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Editor from "@monaco-editor/react";
-import {
-  gettingAquestion,
-  submitAquestion,
-} from "../../../controller/api-technicalRound";
+import {gettingAquestion,submitAquestion} from "../../../controller/api-technicalRound";
 import Timer from "./Timer";
 import { minify } from "terser";
 import { useDispatch } from "react-redux";
 import { result } from "../../../store/slices/technicalRoundSlice";
+
 const CodeEditor: React.FC = () => {
   const editorRef = useRef(null);
   const dispatch = useDispatch();
+
+  // Custom Monaco theme definition
+  const customTheme = {
+    base: "vs-dark",
+    inherit: true,
+    rules: [
+      { token: "comment", foreground: "6A9955" },
+      { token: "keyword", foreground: "569CD6", fontStyle: "bold" },
+      { token: "string", foreground: "CE9178" },
+      { token: "number", foreground: "B5CEA8" },
+      { token: "function", foreground: "DCDCAA" },
+      { token: "variable", foreground: "9CDCFE" },
+      { token: "type", foreground: "4EC9B0" },
+    ],
+    colors: {
+      "editor.background": "#1F2337",
+      "editor.foreground": "#E5F9FF",
+      "editor.lineHighlightBackground": "#2D3250",
+      "editor.selectionBackground": "#404878",
+      "editor.inactiveSelectionBackground": "#3A4266",
+      "editorCursor.foreground": "#4CC2FF",
+      "editorLineNumber.foreground": "#58608A",
+      "editorLineNumber.activeForeground": "#4CC2FF",
+      "editor.selectionHighlightBackground": "#2D3250",
+      "editor.wordHighlightBackground": "#2D3250",
+      "editorIndentGuide.background": "#2D3250",
+      "scrollbarSlider.background": "#2D325066",
+      "scrollbarSlider.hoverBackground": "#2D3250AA",
+      "scrollbarSlider.activeBackground": "#4CC2FF66",
+    },
+  };
+
   const driverCode = `function main() {
     let a = new Solution();
     let testCases = [[2, 7, 11, 15], [3, 2, 4], [3, 3]];
@@ -27,8 +57,7 @@ const CodeEditor: React.FC = () => {
     console.log("All test cases passed");
     return true;
 }
-main()
-      `;
+main()`;
 
   const handleRun = async () => {
     const fullCode = editorRef.current.getValue() + "\n" + driverCode;
@@ -48,7 +77,13 @@ main()
     await gettingAquestion(1);
     monaco.languages.typescript.javascriptDefaults.setEagerModelSync(true);
   }
-
+  
+  const handleEditorDidMount = (editor, monaco) => {
+    editorRef.current = editor;
+    // Define and set theme after editor is mounted
+    monaco.editor.defineTheme('customDarkTheme', customTheme);
+    monaco.editor.setTheme('customDarkTheme');
+  };
   return (
     <>
       <button onClick={handleRun} id="run">
@@ -58,19 +93,35 @@ main()
       <div className="editor">
         <Timer />
         <Editor
-          theme="vs-dark"
-          height="105%"
-          width="100%"
+          height="95vh"
+          width="99%"
           defaultLanguage="javascript"
           beforeMount={handleEditorWillMount}
-          onMount={(editor, monaco) => {
-            editorRef.current = editor;
-          }}
+          onMount={handleEditorDidMount}
           options={{
-            wordWrap: "on", // Enables word wrapping
-            wordWrapBreakAfterCharacters: ",;.", // Breaks lines after these characters
-            wrappingIndent: "indent", // Indents wrapped lines
-            minimap: { enabled: false }, // Optional: disable the minimap
+            wordWrap: "on",
+            wordWrapBreakAfterCharacters: ",;.",
+            wrappingIndent: "indent",
+            minimap: { enabled: false },
+            fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
+            fontSize: 14,
+            lineHeight: 1.5,
+            padding: { top: 10 },
+            scrollBeyondLastLine: false,
+            cursorBlinking: "smooth",
+            smoothScrolling: true,
+            renderLineHighlight: "all",
+            bracketPairColorization: {
+              enabled: true,
+            },
+            autoIndent: "full",
+            formatOnPaste: true,
+            formatOnType: true,
+            glyphMargin: false,
+            guides: {
+              bracketPairs: true,
+              indentation: true,
+            },
           }}
         />
       </div>

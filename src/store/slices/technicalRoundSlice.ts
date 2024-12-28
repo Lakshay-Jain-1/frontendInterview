@@ -45,12 +45,16 @@ export const technicalSlice = createSlice({
     result: (state, action: PayloadAction<any>) => {
       state.testCaseOutput = true
       action.payload.trim() == "All test cases passed" ? state.successful = true : state.successful = false;
-  }
+    },
+    resetResult: (state) => {
+      state.testCaseOutput = false
+      
+    }
   
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { add ,result} = technicalSlice.actions
+export const { add ,result,resetResult} = technicalSlice.actions
 
 export default technicalSlice.reducer

@@ -9,3 +9,8 @@ import '@fontsource/roboto/700.css';
   box-sizing:border-box;
   line-height:1.2rem; 
 }
+
+body{
+  margin:0;
+  padding:0;
+}

@@ -1,94 +1,104 @@
 #run {
   position: fixed;
-  right: 48%;
+  right: 45%;
   top: 0.4%;
   z-index: 2;
   width: 70px;
-  border: 1px solid #3c3c3c;
-  background-color: #252526;
-  font-weight:bolder;
-  color: #d4d4d4;
+  border: 1px solid #4CC2FF;
+  background-color: #2D3250;
+  font-weight: bolder;
+  color: #E5F9FF;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  line-height:1.5rem;
+  box-shadow: 0 2px 8px rgba(76, 194, 255, 0.3);
+  line-height: 1.5rem;
+  transition: all 0.2s ease;
 }
+
 #run:hover {
-  background-color: #3c3c3c;
+  background-color: #424769;
+  box-shadow: 0 2px 12px rgba(76, 194, 255, 0.5);
+  transform: translateY(-1px);
 }
 
 .editor {
-  position: relative; /* Ensure this is the containing block for absolute positioning */
-  height:75vh;
+  position: relative;
+  height: 95vh;
   width: 45vw;
-  border: 1px solid #3c3c3c;
-  display: grid; /* Use grid if you want structured layout */
+  border: 1px solid #2D3250;
+  display: grid;
   grid-area: editorPosition;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  background-color: #252526;
-  margin-top:10px;
-  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  background-color: #1A1B26;
+  border-radius: 12px;
+  margin-top: 10px;
+  border: 1px solid #4CC2FF;
 }
+
 .question {
   margin-top: 30px;
   width: 50vw;
   min-height: 50vh;
   grid-area: questionPosition;
-  background-color: #252526;
-  border: 1px solid #3c3c3c;
-  border-radius: 5px;
-  color: #d4d4d4;
+  background-color: #2D3250;
+  border: 1px solid #4CC2FF;
+  border-radius: 12px;
+  color: #E5F9FF;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   line-height: 1.5;
-  padding:20px;
-
+  padding: 20px;
 }
 
 .testCase {
-  border-top: 2px solid black;
+  border-top: 1px solid #4CC2FF;
   width: 50vw;
-  height: 45vh;
+  height: 40vh;
   grid-area: testcasePosition;
-  background-color: #252526;
-  border: 1px solid #3c3c3c;
-  border-radius: 5px;
-  color: #d4d4d4;
+  background-color: #2D3250;
+  border: 1px solid #4CC2FF;
+  border-radius: 12px;
+  color: #E5F9FF;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   line-height: 1.5;
-  padding:20px;
-  margin-top:10px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .technicalRound {
   display: grid;
   grid-template-areas:
-    "questionPosition questionPosition "
-    "questionPosition questionPosition "
-    "testcasePosition testcasePosition "
-    "editorPosition editorPosition ";
-  width: 100vw;
-  height:100%;
-  background-color: #1e1e1e;
-  color: #d4d4d4;
-  background-color: #252526;
-  overflow:hidden;
-
+    "questionPosition questionPosition"
+    "questionPosition questionPosition"
+    "testcasePosition testcasePosition"
+    "editorPosition editorPosition";
+  width: 100%;
+  height: 100%;
+  color: #E5F9FF;
+  background: linear-gradient(135deg, #0F1021 0%, #1A1B26 100%);
+  
+  margin: 0px;
 }
+
+/* Media queries remain the same */
 
 /* For mobile */
 @media only screen and (max-width: 1000px) {
-  .question,
-  .testCase,
-  .editor {
-    width: 100vw;
+  .question{
+    width: 90vw;
   }
- 
+  .testCase{
+    width:90vw;
+  }
+  .editor{
+    width:97vw;
+    padding:10px;
+  }
 }
 
 /* For laptop */
