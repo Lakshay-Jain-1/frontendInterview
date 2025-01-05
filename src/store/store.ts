@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import technicalReducer from "./slices/technicalRoundSlice"
+import interviewReducer from "./slices/interviewRoud"
 export const store = configureStore({
   reducer: {
-    technical:technicalReducer},
+    technical: technicalReducer,
+    interview: interviewReducer
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

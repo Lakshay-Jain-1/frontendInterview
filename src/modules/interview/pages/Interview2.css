@@ -1,0 +1,86 @@
+.joiningContainer{
+    display: grid;
+    place-items: center;
+    margin: 0;
+    background-color: #2D3250;
+    color: #E5F9FF;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas:  
+    "remoteVideoOne remoteVideotwo acceptingbox"
+    "remoteVideoOne remoteVideotwo acceptingbox"
+    "remoteVideoOne remoteVideotwo acceptingbox";
+}
+
+
+#remoteVideo{
+    border: 1px solid #4CC2FF;
+    background-color: #2D3250;
+    font-weight: bolder;
+    box-shadow: 0 2px 8px rgba(76, 194, 255, 0.3);
+    color: #E5F9FF;
+    height: 70vh;
+    width: 35vw;
+    grid-area: remoteVideoOne;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+#viduser2{
+    border: 1px solid #4CC2FF;
+    background-color: #2D3250;
+    font-weight: bolder;
+    box-shadow: 0 2px 8px rgba(76, 194, 255, 0.3);
+    color: #E5F9FF;
+    height: 70vh;
+    width: 35vw;
+    border-radius: 12px;
+    grid-area: remoteVideotwo;
+    object-fit: cover;`
+}
+#acceptingBox{
+    text-align: center;
+    grid-area: acceptingbox;
+}
+
+.acceptOrDecilineCall{
+    border: 1px solid #4CC2FF;
+    background-color: #2D3250;
+    font-weight: bolder;
+    color: lightgoldenrodyellow;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(76, 194, 255, 0.3);
+    line-height: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+
+@media only screen and (max-width: 650px) {
+    .joiningContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    #remoteVideo {
+        margin-top: 10px;
+       width: 60vw;
+       height: 500px;
+       margin-bottom: 10px;
+    }
+    #viduser2 {
+        width: 60vw;
+        height: 500px;
+     }
+
+     #acceptingBox{
+        margin-bottom: 80px;
+    }
+    
+
+}

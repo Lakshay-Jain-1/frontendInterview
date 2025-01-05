@@ -39,7 +39,7 @@
 }
 
 .question {
-  margin-top: 30px;
+  margin-top: 60px;
   width: 50vw;
   min-height: 50vh;
   grid-area: questionPosition;
@@ -81,6 +81,7 @@
   height: 100%;
   color: #E5F9FF;
   background: linear-gradient(135deg, #0F1021 0%, #1A1B26 100%);
+  place-items:center;
   
   margin: 0px;
 }
@@ -90,10 +91,12 @@
 /* For mobile */
 @media only screen and (max-width: 1000px) {
   .question{
-    width: 90vw;
+    width: 87vw;
+    margin-right:11px;
   }
   .testCase{
-    width:90vw;
+    width:87vw;
+    margin-right:11px;
   }
   .editor{
     width:97vw;

@@ -1,6 +1,6 @@
 const gettingAquestion = async (questioID) => {
     try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER_URL}/technical/question/${questioID}`)
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER_URL}/api/tech/question/${questioID}`)
         const data = await response.json()
         return data[0]
     } catch (err) {
@@ -10,9 +10,8 @@ const gettingAquestion = async (questioID) => {
 
 const submitAquestion = async (sourceCode: string, languageId: number) => {
     try {
-        console.log("sourceCode",sourceCode,languageId,"languageOD","frontend")
         const response = await fetch(
-            `${import.meta.env.VITE_BACKEND_SERVER_URL}/technical/question/execute`,
+            `${import.meta.env.VITE_BACKEND_SERVER_URL}/api/tech/question/execute`,
             {
               method: 'POST',
               headers: {

@@ -29,19 +29,32 @@ export default function Result() {
     setOpen(false);
     dispatch(resetResult());
   };
+  React.useEffect(()=>{
+    const element = document.getElementById(':r3:');
+    if(element)element.style.backgroundColor=" #2D3250"
+  },[])
 
   return (
     <>
-        {success?<img  style={{zIndex:3,position:"absolute",top:0,width:"90vw",height:"90vh"}}src="successful.gif"></img>:""}
-      <Dialog
+        {success?<img  style={{zIndex:3,position:"absolute",top:"10px",width:"90vw",height:"90vh"}}src="successful.gif"></img>:""}
+      <Dialog 
         open={open}
         TransitionComponent={Transition}
         keepMounted
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
+        sx={{
+          '& .MuiPaper-root': {
+            backgroundColor: '#2D3250',
+            border: '1px solid #4CC2FF',
+            borderRadius: '12px',
+            color: ' #E5F9FF',
+          },
+        }}
+        
       >
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
+        <DialogContent >
+          <DialogContentText style={{ color: ' #E5F9FF',}}  id="alert-dialog-slide-description">
             {success
               ? "Your code is perfect !! BRAVOOOOOOO"
               : "Your code has some issues !! Better Luck next time...."}
@@ -49,7 +62,7 @@ export default function Result() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
+          <Button style={{ color: ' #E5F9FF',}} onClick={handleClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </>

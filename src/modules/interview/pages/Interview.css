@@ -1,0 +1,149 @@
+.logocontainer {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    grid-template-columns: auto auto;
+    row-gap: -100px;
+    justify-content: space-evenly;
+    background-color: #2D3250;
+    color: #E5F9FF;
+}
+
+.logocontainer>div {
+    margin: -120px;
+}
+
+.logocontainer>div>svg {
+    width: 100px;
+    height: 100px;
+
+}
+
+.logocontainer>div>svg>path {
+    border: 1px solid #4CC2FF;
+    border-radius: 12px;
+}
+
+
+.creatingContainer {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    background-color: #2D3250;
+    color: #E5F9FF;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas:
+        "userOne userTwo OnlineUSERS"
+        "userOne userTwo OnlineUSERS"
+        "userOne userTwo OnlineUSERS";
+}
+
+.firstUser {
+    border: 1px solid #4CC2FF;
+    background-color: #2D3250;
+    font-weight: bolder;
+    box-shadow: 0 2px 8px rgba(76, 194, 255, 0.3);
+    color: #E5F9FF;
+    height: 70vh;
+    width: 35vw;
+    grid-area: userOne;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.secondUser {
+    border: 1px solid #4CC2FF;
+    background-color: #2D3250;
+    font-weight: bolder;
+    box-shadow: 0 2px 8px rgba(76, 194, 255, 0.3);
+    color: #E5F9FF;
+    height: 70vh;
+    width: 35vw;
+    border-radius: 12px;
+    object-fit: cover;
+    grid-area: userTwo;
+}
+
+#onlineUsers {
+    margin-left: -10px;
+    font-weight: bolder;
+    color: #E5F9FF;
+    grid-area: OnlineUSERS;
+    text-align: center;
+    margin-bottom:80px ;
+}
+
+.createAlink {
+    width: 140px;
+    height: 50px;
+    border: 1px solid #4CC2FF;
+    background-color: #2D3250;
+    font-weight: bolder;
+    color: #E5F9FF;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(76, 194, 255, 0.3);
+    line-height: 1.5rem;
+    transition: all 0.2s ease;
+    grid-area: linkButton;
+
+}
+
+.callCut {
+    position: fixed;
+    right: 46.4vw;
+    bottom: 1.4%;
+    z-index: 2;
+    width: 100px;
+    border: 1px solid #4CC2FF;
+    background-color: #2D3250;
+    font-weight: bolder;
+    color: lightgoldenrodyellow;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(76, 194, 255, 0.3);
+    line-height: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.callCut:hover {
+    background-color: #424769;
+    box-shadow: 0 2px 12px rgba(76, 194, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+
+@media only screen and (max-width: 540px) {
+    .logocontainer {
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .creatingContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .firstUser {
+        margin-top: 10px;
+       width: 60vw;
+       height: 500px;
+       margin-bottom: 10px;
+    }
+    .secondUser {
+        width: 60vw;
+        height: 500px;
+     }
+
+}
