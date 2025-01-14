@@ -3,7 +3,7 @@ import { checkOnlineUsers } from "../../../controller/api-activeUsers";
 import { sendOffer } from "../../../controller/api-sharingSdp";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
-import { setAcceptor } from "../../../store/slices/interviewRoud";
+import { setAcceptor } from "../../../store/slices/interviewRound";
 
 function OnlineUsers() {
   let [onlineUser, setOnlineUsers] = useState<Object[] | null>(null);

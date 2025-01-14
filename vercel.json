@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "dist" }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/3d/(.*)\\.glb",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        },
+        "dest": "/3d/$1.glb"
+      },
+      {
+        "src": "/(.*)\\.(?:png|jpg|jpeg|svg|gif)",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        },
+        "continue": true
+      },
+      {
+        "handle": "filesystem"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
+  }

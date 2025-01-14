@@ -36,7 +36,7 @@
     width: 35vw;
     border-radius: 12px;
     grid-area: remoteVideotwo;
-    object-fit: cover;`
+    object-fit: cover;
 }
 #acceptingBox{
     text-align: center;

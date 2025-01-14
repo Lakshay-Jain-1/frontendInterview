@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { accessOffer, sendAnswer } from "../../../controller/api-sharingSdp";
 import { useDispatch, useSelector } from "react-redux";
-import { setAcceptor, setOFFER } from "../../../store/slices/interviewRoud";
+import { setAcceptor, setOFFER } from "../../../store/slices/interviewRound";
 import { RootState } from "../../../store/store";
 
 export default function User2() {

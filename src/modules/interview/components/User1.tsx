@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setANSWER, setOFFER } from "../../../store/slices/interviewRoud";
+import { setANSWER, setOFFER } from "../../../store/slices/interviewRound";
 import { accessAnswer } from "../../../controller/api-sharingSdp";
 import { RootState } from "../../../store/store";
 

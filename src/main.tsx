@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import TechnicalRound from "./modules/codeEditor/pages/TechnicalRound.tsx";
 import VideoChat from "./modules/interview/pages/Interview.tsx";
 import App from "./App.tsx";
+import AiInterview from "./modules/aiInterview/pages/AiInterview.tsx";
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <BrowserRouter>
@@ -13,6 +14,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/technical" element={<TechnicalRound />} />
         <Route path="/interview" element={<VideoChat />} />
         <Route path="/" element={<App />} />
+        <Route path="/testing" element={<AiInterview />} />
       </Routes>
     </BrowserRouter>
   </Provider>

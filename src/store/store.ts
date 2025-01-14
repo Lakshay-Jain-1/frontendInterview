@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import technicalReducer from "./slices/technicalRoundSlice"
-import interviewReducer from "./slices/interviewRoud"
+import technical from "./slices/technicalRoundSlice"
+import interview from "./slices/interviewRound"
+import aiInterview from "./slices/aiInterview"
 export const store = configureStore({
   reducer: {
-    technical: technicalReducer,
-    interview: interviewReducer
+    technical,
+    interview,
+    aiInterview
   },
 })
 
