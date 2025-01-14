@@ -7,6 +7,9 @@ import "./Interview.css"
 import "./Interview2.css"
 import { callCut, setAUserOffline, setAUserOnline } from "../../../controller/api-activeUsers";
 import OnlineUsers from "../components/OnlineUsers";
+
+declare const window :any
+
 function VideoChat() {
   const [create, setCreate] = useState<boolean | null>(true);
   const [createOffer, setCreateOffer] = useState<boolean | null>(false);
